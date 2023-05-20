@@ -1,6 +1,6 @@
 # AFG-JS-Restaurant-App
 
-This repository contains a command-line restaurant management App implemented in JavaScript. The system allows managers to perform various operations such as adding new items to the menu, removing items from the menu, updating the menu, displaying the menu, and viewing customer ratings. Customers can provide feedback on their food satisfaction.
+This repository contains a command-line AFG-JS-Restaurant-App implemented in JavaScript. The system allows managers to perform various operations such as adding new items to the menu, removing items from the menu, updating the menu, displaying the menu, and viewing customer ratings. Customers can provide feedback on their food satisfaction.
 
 ## Installation
 
