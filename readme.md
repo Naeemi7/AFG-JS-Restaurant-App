@@ -1,6 +1,6 @@
 # AFG-JS-Restaurant-App
 
-This repository contains a command-line restaurant management system implemented in JavaScript. The system allows managers to perform various operations such as adding new items to the menu, removing items from the menu, updating the menu, displaying the menu, and viewing customer ratings. Customers can provide feedback on their food satisfaction.
+This repository contains a command-line restaurant management App implemented in JavaScript. The system allows managers to perform various operations such as adding new items to the menu, removing items from the menu, updating the menu, displaying the menu, and viewing customer ratings. Customers can provide feedback on their food satisfaction.
 
 ## Installation
 
@@ -9,7 +9,7 @@ To use the restaurant management system, follow these steps:
 1. Clone the repository to your local machine:
 
 ```shell
-  git clone git@github.com:Naeemi7/Restaurant-Management-System.git
+  git clone git@github.com:Naeemi7/AFG-JS-Restaurant-App.git
 ```
 
 2. Navigate to the project directory:
@@ -55,7 +55,7 @@ The menu data is stored in the Menu.js file. It contains an array of food items,
 
 ## Dependencies
 
-The restaurant management system uses the following dependencies:
+The AFG-JS-Restaurant-App uses the following dependencies:
 
 - `readline-sync`: Allows for synchronous user input in the command-line interface.
 
@@ -65,4 +65,4 @@ The restaurant management system uses the following dependencies:
 
 ## Contributing
 
-Contributions to the restaurant management system are welcome. If you find a bug or have a suggestion for improvement, please open an issue or submit a pull request.
+Contributions to the AFG-JS-Restaurant-App are welcome. If you find a bug or have a suggestion for improvement, please open an issue or submit a pull request.
