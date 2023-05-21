@@ -17,7 +17,8 @@ class Restaurant {
 
     //Check if the food name is already in the menu
     if (this.menu.find((item) => item.name === name)) {
-      console.log(`\n${name} already exists in the menu!\n`);
+      console.log("");
+      console.log(`${name} already exists in the menu!\n`);
       this.addItem();
       return;
     }
@@ -31,7 +32,8 @@ class Restaurant {
     this.menu.push({ ID, name, price, category, description });
 
     //Notify the Manager that the item has been added
-    console.log(`\n${name} was successfully added!`);
+    console.log("");
+    console.log(`${name} was successfully added!`);
 
     //An array of added items object
     const addedItems = [
@@ -52,8 +54,9 @@ class Restaurant {
     ]);
 
     //Ask the Manager to add more items to the menu
+    console.log("");
     const option = prompt
-      .question("\nDo you want to add more food? (y/n): ")
+      .question("Do you want to add more food? (y/n): ")
       .toLowerCase();
 
     switch (option) {
@@ -74,8 +77,9 @@ class Restaurant {
 
   //Remove items from menu method
   removeItem() {
+    console.log("");
     const itemToRemove = prompt
-      .question("\nEnter the name of the item to delete: ")
+      .question("Enter the name of the item to delete: ")
       .toLowerCase();
 
     //to check if the food is already in the menu
@@ -85,7 +89,8 @@ class Restaurant {
 
     //Validate if the item isn't available in the menu
     if (findItemIndex === -1) {
-      console.log(`\n${itemToRemove} is not available in the menu!\n`);
+      console.log("");
+      console.log(`${itemToRemove} is not available in the menu!\n`);
 
       const tryAgain = prompt.question("Do you want to try again? (y/n): ");
 
@@ -105,7 +110,8 @@ class Restaurant {
     }
 
     //Notify the Manager that the item has been added
-    console.log(`\n${itemToRemove} was successfully removed!`);
+    console.log("");
+    console.log(`${itemToRemove} was successfully removed!`);
 
     //Display the removed item for the Manager
     const removedItem = this.menu.splice(findItemIndex, 1)[0];
@@ -128,8 +134,9 @@ class Restaurant {
     ]);
 
     //Verify if the Manager wants to remove more items!
+    console.log("");
     const removeAgain = prompt
-      .question("\nRemove another item? (y/n): ")
+      .question("Remove another item? (y/n): ")
       .toLowerCase();
 
     switch (removeAgain) {
@@ -148,15 +155,17 @@ class Restaurant {
 
   //Update menu method
   updateMenu() {
+    console.log("");
     const itemName = prompt
-      .question("\nEnter the food name to update: ")
+      .question("Enter the food name to update: ")
       .toLowerCase();
 
     //Checks if the food is already in the menu
     const itemIndex = this.menu.findIndex((item) => item.name === itemName);
 
     if (itemIndex === -1) {
-      console.log(`\n${itemName} is not found in the menu\n`);
+      console.log("");
+      console.log(`${itemName} is not found in the menu\n`);
       const tryAgain = prompt.question("Do you want to try again? (y/n): ");
 
       switch (tryAgain) {
@@ -177,7 +186,8 @@ class Restaurant {
     const food = this.menu[itemIndex];
 
     //Display the food details to be edited
-    console.log(`\nEditing ${itemName}... \n`);
+    console.log("");
+    console.log(`Editing ${itemName}... \n`);
 
     //An array of items object to be edited
     const selectedItem = [
@@ -201,8 +211,9 @@ class Restaurant {
     const newItems = {};
 
     //Assigning the new items as value to the newItems object
+    console.log("");
     newItems.name = prompt.question(
-      "\nEnter the new name (or leave blank to keep current name): "
+      "Enter the new name (or leave blank to keep current name): "
     );
     newItems.price = parseFloat(
       prompt.question(
@@ -225,7 +236,8 @@ class Restaurant {
     });
 
     //Notify the Manager that the items have been updated
-    console.log(`\n${itemName} was successfully updated!\n`);
+    console.log("");
+    console.log(`${itemName} was successfully updated!\n`);
 
     const updatedValues = [
       {
@@ -245,7 +257,8 @@ class Restaurant {
     ]);
 
     //Asking the Manager if want to update the items again
-    const newUpdate = prompt.question("\nDo you want to update again? (y/n): ");
+    console.log("");
+    const newUpdate = prompt.question("Do you want to update again? (y/n): ");
 
     switch (newUpdate) {
       case "y":
@@ -277,22 +290,26 @@ class Restaurant {
       averageRating < 2 || averageRating > 10
         ? "👎"
         : stars.repeat(Math.floor(averageRating));
-    console.log(`\nFeedback Average: ${rating}\n`);
+    console.log("");
+    console.log(`Feedback Average: ${rating}\n`);
     return this.reception.welcome();
   }
 
   //Feedback method
   feedBack() {
+    console.log("");
     const foodSatisfaction = Number(
-      prompt.question("\nRate your food satisfaction on a scale of 1 to 10: ")
+      prompt.question("Rate your food satisfaction on a scale of 1 to 10: ")
     );
 
     if (foodSatisfaction > 10) {
-      console.log("\nInvalid rating range! Please try again!");
+      console.log("");
+      console.log("Invalid rating range! Please try again!");
       return this.feedBack();
     }
     this.feedbackArray.push(foodSatisfaction);
-    console.log("\nThank you for your invaluable feedback!\n");
+    console.log("");
+    console.log("Thank you for your invaluable feedback!\n");
 
     this.customer.customerLogin();
   }

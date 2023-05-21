@@ -35,7 +35,8 @@ class Customer {
   // Order Item method
   orderItem() {
     //Ask the user for the order
-    this.orderName = Number(prompt.question("\nEnter the Food ID from menu: "));
+    console.log("");
+    this.orderName = Number(prompt.question("Enter the Food ID from menu: "));
     this.orderQuantity = Number(prompt.question("Enter the order quantity: "));
 
     //checks if the ordered item exists in the menu
@@ -54,19 +55,22 @@ class Customer {
           this.orderItem();
           break;
         default:
-          console.log("\nThanks for coming to AFG restaurant! \n");
+          console.log("");
+          console.log("Thanks for coming to AFG restaurant! \n");
           restaurant.welcome();
           break;
       }
     } else {
+      console.log("");
       console.log(
-        `\nYou orded ${this.orderQuantity} ${this.menu[this.orderIndex].name}`
+        `You orded ${this.orderQuantity} ${this.menu[this.orderIndex].name}`
       );
 
       //Asking the customer for order confirmation
+      console.log("");
       const confirmOrder = prompt
         .question(
-          `\nConfirm the order of ${this.orderQuantity} ${
+          `Confirm the order of ${this.orderQuantity} ${
             this.menu[this.orderIndex].name
           }: (yes/no): `
         )
@@ -91,7 +95,8 @@ class Customer {
           "quantity",
           "description",
         ]);
-        console.log("\nYour order was confirmed!\n");
+        console.log("");
+        console.log("Your order was confirmed!\n");
         this.customerLogin();
       } else {
         this.orderItem();
@@ -118,8 +123,8 @@ class Customer {
     const totalAmount = this.orderArray.reduce((sum, order) => {
       return sum + order.quantity * order.price;
     }, 0);
-
-    console.log("\nYour receipt was calculated!");
+    console.log("");
+    console.log("Your receipt was calculated!");
     console.table(calculatedReceipt, [
       "ID",
       "name",
@@ -131,18 +136,21 @@ class Customer {
     ]);
 
     //Tip calculation
+    console.log("");
     const tips = Number(
-      prompt.question("\nDo you want to add a tip? (Leave empty if not): ")
+      prompt.question("Do you want to add a tip? (Leave empty if not): ")
     );
     if (tips > 0) {
       const finalAmount = totalAmount + tips;
+      console.log("");
       console.log(
-        `\nReceipt amount: ${totalAmount}€, tip: ${tips}€, total amount: ${finalAmount.toFixed(
+        `Receipt amount: ${totalAmount}€, tip: ${tips}€, total amount: ${finalAmount.toFixed(
           2
         )}€\n`
       );
     } else {
-      console.log(`\nTotal Amount: ${totalAmount.toFixed(2)}€`);
+      console.log("");
+      console.log(`Total Amount: ${totalAmount.toFixed(2)}€`);
     }
 
     //Empty the orderArray after receipt is calculated
